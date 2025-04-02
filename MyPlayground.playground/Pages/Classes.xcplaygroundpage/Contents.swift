@@ -35,6 +35,18 @@ class Manager: Employee {
     
     var teamSize = 0
     
+    // Property
+    var bonus: Int {
+        // getter, accessor
+        return teamSize * 1000
+    }
+    
+    init(_ name: String, _ teamSize: Int) {
+        super.init(name)
+        
+        self.teamSize = teamSize
+    }
+    
     override func doWork() {
 //        super.doWork()
         
@@ -53,9 +65,9 @@ emp1.salary = 10000
 emp1.role = "Developer"
 emp1.doWork()
 
-let manager = Manager("Artem")
+let manager = Manager("Artem", 11)
 manager.salary = 10000
 manager.role = "Manager"
-manager.teamSize = 30
 manager.doWork()
 manager.fire()
+print(manager.bonus)
