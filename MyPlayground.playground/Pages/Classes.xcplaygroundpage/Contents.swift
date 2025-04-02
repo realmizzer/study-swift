@@ -1,6 +1,15 @@
 class Person {
     
     var name = ""
+    
+    // default constructor
+    init() {
+        
+    }
+    
+    init (_ name: String) {
+        self.name = name
+    }
 }
 
 class Employee: Person {
@@ -8,6 +17,12 @@ class Employee: Person {
     var salary = 0
     var currencyType = "Dollar"
     var role = "Employee"
+    
+    override init(_ name: String) {
+        super.init(name)
+        
+        self.role = "Analyst"
+    }
     
     func doWork() {
         print("\(name) is doing work")
@@ -33,8 +48,7 @@ class Manager: Employee {
     
 }
 
-let emp1 = Employee()
-emp1.name = "Maxim"
+let emp1 = Employee("Maxim")
 emp1.salary = 10000
 emp1.role = "Developer"
 emp1.doWork()
