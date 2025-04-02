@@ -4,7 +4,7 @@ class Person {
     
     // default constructor
     init() {
-        
+        name = "Somebody"
     }
     
     init (_ name: String) {
@@ -53,8 +53,7 @@ emp1.salary = 10000
 emp1.role = "Developer"
 emp1.doWork()
 
-let manager = Manager()
-manager.name = "Artem"
+let manager = Manager("Artem")
 manager.salary = 10000
 manager.role = "Manager"
 manager.teamSize = 30
